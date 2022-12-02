@@ -1,0 +1,19 @@
+<div>
+<ul>
+    <li *ngFor="let teacher of teachersList">
+        <button type="button" (click)="onSelect(teacher)">
+        {{teacher.id}} : {{teacher.name}}
+    </button>
+    <br><br>
+    </li>
+</ul>
+</div>
+
+<div *ngIf="selectedTeacher">
+    <h3>{{selectedTeacher.id}} : {{selectedTeacher.name}} :  {{selectedTeacher.domain}}</h3>
+
+    <div>
+        <label for="teacher-name">Teacher Name: </label>
+        <input id="teacher-name" [(ngModel)]="selectedTeacher.name">
+    </div>
+</div>
